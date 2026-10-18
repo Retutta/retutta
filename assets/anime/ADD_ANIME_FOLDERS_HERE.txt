@@ -1,0 +1,1 @@
+Create one folder per anime here. Put cover.jpg and description.md inside each anime folder.
