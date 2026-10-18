@@ -101,8 +101,8 @@ try{setLang(localStorage.getItem("retutta-lang")||"uk")}catch(e){setLang("uk")}
 const artStage=document.getElementById("artStage"),artEmpty=document.getElementById("artEmpty"),artPosition=document.getElementById("artPosition"),artDots=document.getElementById("artDots");
 const artPrev=document.getElementById("artPrev"),artNext=document.getElementById("artNext");
 let artItems=[],artIndex=0;
-const imageExt=/\\.(avif|gif|jpe?g|png|webp|bmp)$/i;
-function naturalArtSort(a,b){const na=(a.name.match(/\\d+/)||[])[0],nb=(b.name.match(/\\d+/)||[])[0];if(na!==undefined&&nb!==undefined&&Number(na)!==Number(nb))return Number(na)-Number(nb);if(na!==undefined&&nb===undefined)return -1;if(na===undefined&&nb!==undefined)return 1;return a.name.localeCompare(b.name,undefined,{numeric:true,sensitivity:"base"})}
+const imageExt=/\.(avif|gif|jpe?g|png|webp|bmp)$/i;
+function naturalArtSort(a,b){const na=(a.name.match(/\d+/)||[])[0],nb=(b.name.match(/\d+/)||[])[0];if(na!==undefined&&nb!==undefined&&Number(na)!==Number(nb))return Number(na)-Number(nb);if(na!==undefined&&nb===undefined)return -1;if(na===undefined&&nb!==undefined)return 1;return a.name.localeCompare(b.name,undefined,{numeric:true,sensitivity:"base"})}
 function showArt(index){if(!artItems.length)return;artIndex=(index+artItems.length)%artItems.length;artStage.querySelectorAll("img").forEach((img,i)=>img.classList.toggle("active",i===artIndex));artDots.querySelectorAll("button").forEach((dot,i)=>dot.classList.toggle("active",i===artIndex));artPosition.textContent=(artIndex+1)+" / "+artItems.length;artPrev.disabled=artNext.disabled=artItems.length<2}
 artPrev.addEventListener("click",()=>showArt(artIndex-1));artNext.addEventListener("click",()=>showArt(artIndex+1));
 document.addEventListener("keydown",e=>{if(e.key==="ArrowLeft"&&document.activeElement.tagName!=="INPUT")showArt(artIndex-1);if(e.key==="ArrowRight"&&document.activeElement.tagName!=="INPUT")showArt(artIndex+1)});
