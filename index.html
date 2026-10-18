@@ -19,7 +19,17 @@ section{padding:36px 0}.section-head{display:flex;align-items:end;justify-conten
 /* ✦ Subtle Crystal Archive animations */
 body:before{animation:starDrift 42s linear infinite}
 body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.18;background-image:radial-gradient(circle,rgba(255,221,240,.95) 1px,transparent 2px),radial-gradient(circle,rgba(242,166,193,.85) 1px,transparent 2px),radial-gradient(circle,rgba(212,164,55,.9) 1px,transparent 2px);background-size:173px 173px,239px 239px,311px 311px;background-position:25px 35px,90px 110px,150px 20px;animation:twinkle 5s ease-in-out infinite alternate;mask-image:linear-gradient(to bottom,#000,transparent 92%)}
-.topbar,.wrap,.foot,.modal{position:relative;z-index:1}.crystal-atmosphere{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.55;background-image:radial-gradient(ellipse at 14% 32%,rgba(242,166,193,.10),transparent 23%),radial-gradient(ellipse at 83% 70%,rgba(143,91,179,.12),transparent 27%),radial-gradient(ellipse at 62% 12%,rgba(212,164,55,.07),transparent 20%)}.crystal-atmosphere:before,.crystal-atmosphere:after{content:"";position:absolute;width:13px;height:22px;clip-path:polygon(50% 0,100% 35%,76% 100%,24% 100%,0 35%);background:linear-gradient(135deg,rgba(255,221,241,.85),rgba(242,166,193,.25) 55%,rgba(212,164,55,.5));filter:drop-shadow(0 0 9px rgba(242,166,193,.7));opacity:.48;animation:crystalFloat 12s ease-in-out infinite}.crystal-atmosphere:before{left:12%;top:28%;transform:rotate(22deg)}.crystal-atmosphere:after{right:14%;top:62%;width:9px;height:16px;animation-delay:-6s;animation-duration:15s;background:linear-gradient(135deg,rgba(255,231,246,.9),rgba(200,109,145,.32))}.main,.wrap{position:relative;z-index:1}
+.topbar,.wrap,.foot,.modal{position:relative;z-index:1}.crystal-atmosphere{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.55;background-image:radial-gradient(ellipse at 14% 32%,rgba(242,166,193,.10),transparent 23%),radial-gradient(ellipse at 83% 70%,rgba(143,91,179,.12),transparent 27%),radial-gradient(ellipse at 62% 12%,rgba(212,164,55,.07),transparent 20%)}.crystal-atmosphere:before,.crystal-atmosphere:after{content:"";position:absolute;width:13px;height:22px;clip-path:polygon(50% 0,100% 35%,76% 100%,24% 100%,0 35%);background:linear-gradient(135deg,rgba(255,221,241,.85),rgba(242,166,193,.25) 55%,rgba(212,164,55,.5));filter:drop-shadow(0 0 9px rgba(242,166,193,.7));opacity:.48;animation:crystalFloat 12s ease-in-out infinite}.crystal-atmosphere:before{left:12%;top:28%;transform:rotate(22deg)}.crystal-atmosphere:after{right:14%;top:62%;width:9px;height:16px;animation-delay:-6s;animation-duration:15s;background:linear-gradient(135deg,rgba(255,231,246,.9),rgba(200,109,145,.32))}
+.crystal-atmosphere:before,.crystal-atmosphere:after{display:none}
+.bg-crystal{position:absolute;display:block;clip-path:polygon(50% 0,82% 16%,100% 49%,69% 100%,28% 88%,0 42%,20% 14%);background:linear-gradient(118deg,#fff0fa 0%,#f8b5e2 20%,#d85ac0 43%,#a34ecb 63%,#f6b7e7 80%,#fff4fc 100%);filter:drop-shadow(0 0 10px rgba(238,117,221,.8)) drop-shadow(0 0 24px rgba(188,89,230,.35));opacity:.72;animation:crystalFloat 13s ease-in-out infinite}
+.bg-crystal:before{content:"";position:absolute;inset:0;clip-path:polygon(50% 0,51% 56%,20% 14%);background:rgba(255,255,255,.62)}
+.bg-crystal:after{content:"";position:absolute;inset:0;clip-path:polygon(51% 56%,100% 49%,69% 100%,28% 88%);background:rgba(104,44,155,.24)}
+.crystal-one{width:26px;height:39px;left:12%;top:25%;rotate:18deg}
+.crystal-two{width:17px;height:27px;left:31%;top:68%;rotate:-16deg;animation-delay:-4s;animation-duration:16s}
+.crystal-three{width:32px;height:48px;right:16%;top:35%;rotate:12deg;animation-delay:-8s;animation-duration:14s}
+.crystal-four{width:14px;height:22px;right:29%;top:76%;rotate:-24deg;animation-delay:-2s;animation-duration:11s}
+.crystal-five{width:21px;height:33px;left:63%;top:16%;rotate:28deg;animation-delay:-6s;animation-duration:17s}
+.crystal-six{width:12px;height:19px;left:46%;top:48%;rotate:-8deg;animation-delay:-9s;animation-duration:12s;opacity:.55}.main,.wrap{position:relative;z-index:1}
 .topbar{z-index:10}
 .hero-art img{animation:none;transition:filter .35s}
 .hero-art:hover img{filter:saturate(1.08) brightness(1.04)}
@@ -45,7 +55,7 @@ body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opaci
 </style>
 </head>
 <body>
-<div class="crystal-atmosphere" aria-hidden="true"></div>
+<div class="crystal-atmosphere" aria-hidden="true"><i class="bg-crystal crystal-one"></i><i class="bg-crystal crystal-two"></i><i class="bg-crystal crystal-three"></i><i class="bg-crystal crystal-four"></i><i class="bg-crystal crystal-five"></i><i class="bg-crystal crystal-six"></i></div>
 <header class="topbar"><div class="wrap nav">
 <a class="brand" href="#home">Retutta ✦<small>CRYSTAL ARCHIVE</small></a>
 <nav class="navlinks"><a href="#about" data-i="navAbout">Про персонажа</a><a href="#gallery" data-i="navGallery">Галерея</a><a href="#magic" data-i="navMagic">Магія</a><a href="#music" data-i="navMusic">Музика</a></nav>
