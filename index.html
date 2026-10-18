@@ -15,6 +15,33 @@ a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(1120px,
 section{padding:36px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:20px;border-bottom:1px solid var(--line);padding-bottom:12px}.section-head h2{margin:0;color:var(--pink);font-size:clamp(1.6rem,4vw,2.25rem);font-weight:500}.section-head p{margin:0;color:var(--muted);font-size:.9rem;max-width:44ch}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid rgba(212,164,55,.32);padding:20px;position:relative}.card h3{color:var(--pink);margin:0 0 8px;font-size:1.15rem;font-weight:500}.card p,.card li{color:var(--muted);font-size:.94rem}.icon{color:var(--gold);font-size:1.4rem}.statline{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.08);padding:7px 0;color:var(--muted);gap:15px}.statline strong{color:var(--cream);font-weight:400;text-align:right}.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.shot{padding:0;background:#0a121b;border:1px solid var(--line);cursor:pointer;overflow:hidden;text-align:left;color:var(--cream);transition:.25s}.shot:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(242,166,193,.12)}.shot img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}.shot span{display:block;padding:10px 11px;color:var(--pink);font-size:.9rem}.quote{font-size:clamp(1.2rem,3vw,1.8rem);text-align:center;color:var(--cream);padding:28px}.quote em{color:var(--pink);font-style:normal}.magic-layout{display:grid;grid-template-columns:1fr 1fr;gap:15px}.sigil{font-size:3rem;color:var(--pink);text-align:center;text-shadow:0 0 30px var(--glow)}.playlist{display:flex;align-items:center;gap:15px}.crystal{width:64px;height:64px;flex-shrink:0;display:grid;place-items:center;background:linear-gradient(135deg,#f2a6c1,#8d4d79);clip-path:polygon(50% 0,88% 25%,78% 78%,50% 100%,18% 78%,10% 25%);color:#201321;font-size:1.7rem}.socials{display:flex;flex-wrap:wrap;gap:9px}.socials a{border:1px solid var(--line);padding:8px 12px;color:var(--pink);font-size:.9rem}.socials a:hover{background:var(--pink);color:#17101a}.foot{border-top:1px solid var(--line);padding:28px 0 40px;text-align:center;color:var(--muted);font-size:.85rem}.foot b{color:var(--pink);font-weight:400}.modal{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.modal img{max-width:min(95vw,1100px);max-height:88vh;border:1px solid var(--gold)}.modal button{position:absolute;top:15px;right:20px;border:1px solid var(--gold);background:#0c1823;color:var(--pink);padding:8px 13px;cursor:pointer}
 @media(max-width:760px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;overflow:auto;gap:14px;padding-bottom:2px}.hero{grid-template-columns:1fr;padding-top:28px}.hero-art{min-height:280px;max-height:480px}.hero-art img{max-height:480px}.grid{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:repeat(2,1fr)}.magic-layout{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.hero h1{font-size:4rem}}
 @media(max-width:420px){.grid{grid-template-columns:1fr}.brand{font-size:1.15rem}.hero-copy{padding:22px}.gallery{gap:9px}}
+
+/* ✦ Subtle Crystal Archive animations */
+body:before{animation:starDrift 42s linear infinite}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.18;background-image:radial-gradient(circle,rgba(255,221,240,.95) 1px,transparent 2px),radial-gradient(circle,rgba(242,166,193,.85) 1px,transparent 2px),radial-gradient(circle,rgba(212,164,55,.9) 1px,transparent 2px);background-size:173px 173px,239px 239px,311px 311px;background-position:25px 35px,90px 110px,150px 20px;animation:twinkle 5s ease-in-out infinite alternate;mask-image:linear-gradient(to bottom,#000,transparent 92%)}
+.topbar,.wrap,.foot,.modal{position:relative;z-index:1}
+.topbar{z-index:10}
+.hero-art img{animation:portraitFloat 7s ease-in-out infinite;transition:filter .35s,transform .35s}
+.hero-art:hover img{filter:saturate(1.08) brightness(1.04);transform:scale(1.015)}
+.frame{transition:border-color .3s,box-shadow .3s}
+.frame:hover{border-color:rgba(242,166,193,.72);box-shadow:0 20px 70px rgba(0,0,0,.25),0 0 24px rgba(242,166,193,.07)}
+.card{transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.card:hover{transform:translateY(-4px);border-color:rgba(242,166,193,.58);box-shadow:0 12px 32px rgba(0,0,0,.2),0 0 18px rgba(242,166,193,.06)}
+.icon,.sigil{animation:crystalPulse 4.2s ease-in-out infinite;transform-origin:center}
+.icon:nth-child(odd),.sigil{animation-delay:-1.7s}
+.crystal{animation:crystalHover 5s ease-in-out infinite;filter:drop-shadow(0 0 9px rgba(242,166,193,.16))}
+.brand{transition:text-shadow .3s}
+.brand:hover{text-shadow:0 0 16px rgba(242,166,193,.55)}
+.shot img{transition:transform .5s ease,filter .5s ease}
+.shot:hover img{transform:scale(1.035);filter:saturate(1.12)}
+.btn,.socials a,.langs button{transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease}
+@keyframes starDrift{from{background-position:10px 20px,60px 70px}to{background-position:101px 111px,-77px 207px}}
+@keyframes twinkle{0%{opacity:.08;transform:translateY(0)}50%{opacity:.23}100%{opacity:.12;transform:translateY(-7px)}}
+@keyframes portraitFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes crystalPulse{0%,100%{opacity:.78;text-shadow:0 0 7px rgba(242,166,193,.12)}50%{opacity:1;text-shadow:0 0 22px rgba(242,166,193,.48)}}
+@keyframes crystalHover{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-5px) rotate(2deg)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
 </style>
 </head>
 <body>
