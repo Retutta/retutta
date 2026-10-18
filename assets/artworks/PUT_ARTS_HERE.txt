@@ -1,1 +1,0 @@
-Drop artwork image files directly into this folder. This text file is ignored by the generator.
