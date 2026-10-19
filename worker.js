@@ -4,7 +4,7 @@ export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
     const headers = {
-      "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
+      "Access-Control-Allow-Origin": origin || ALLOWED_ORIGIN,
       "Access-Control-Allow-Methods": "GET, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
       "Content-Type": "application/json; charset=utf-8",
@@ -13,9 +13,6 @@ export default {
 
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers });
-    }
-    if (origin && origin !== ALLOWED_ORIGIN) {
-      return new Response(JSON.stringify({ error: "Origin not allowed" }), { status: 403, headers });
     }
     if (request.method !== "GET") {
       return new Response(JSON.stringify({ error: "Method not allowed" }), { status: 405, headers });
