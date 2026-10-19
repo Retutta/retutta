@@ -124,7 +124,7 @@ loadArtGallery();
 <script>
 (async function(){
   const output = document.getElementById("visitorCount");
-  const endpoint = "PASTE_YOUR_CLOUDFLARE_WORKER_URL_HERE";
+  const endpoint = "https://proud-lab-fd0e.vin-trime.workers.dev/";
   if (!output || endpoint.includes("PASTE_YOUR")) return;
   try {
     const response = await fetch(endpoint, {cache:"no-store"});
